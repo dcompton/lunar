@@ -131,7 +131,7 @@ private
         }
       else
         unless value.to_s.empty?
-          sets << KeywordMatches.new(nest[namespace], key, value).distkey
+          sets << KeywordMatches.new(nest[namespace], key, Lunar.encode(value.to_s)).distkey
         end
       end
 

@@ -104,7 +104,7 @@ module Lunar
     # @return [Array<String>] all the metaphones added for the document.
     def text(att, value)
       clear_text_field(att)
-
+      value = Lunar.encode(value.to_s)
       Scoring.new(value).scores.each do |word, score|
         metaphone = Lunar.metaphone(word)
 
