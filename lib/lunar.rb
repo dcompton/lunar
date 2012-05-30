@@ -51,6 +51,10 @@ module Lunar
   def self.delete(namespace, id)
     Index.new(namespace).delete(id)
   end
+ 
+  def self.delete_fuzzy(namespace, id, attr)
+    Index.new(namespace).delete_fuzzy(id, attr)
+  end
 
   # Search for a document, scoped under a namespace.
   #

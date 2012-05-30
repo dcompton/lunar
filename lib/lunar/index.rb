@@ -198,6 +198,11 @@ module Lunar
       delete_sortables
       delete_fuzzies
     end
+    
+    def delete_fuzzy(existing_id, attr)
+      id(existing_id)
+      clear_fuzzy_field(attr)
+    end
 
     def fuzzy(att, value)
       assert_valid_fuzzy(value, att)
